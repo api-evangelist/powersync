@@ -1,0 +1,167 @@
+{
+  "@context": {
+    "@vocab": "https://powersync.com/vocab/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "PowerSyncService": {
+      "@id": "schema:SoftwareApplication",
+      "@type": "@id"
+    },
+    "SyncEngine": {
+      "@id": "https://powersync.com/vocab/SyncEngine",
+      "@type": "@id"
+    },
+    "ClientSDK": {
+      "@id": "schema:SoftwareSourceCode",
+      "@type": "@id"
+    },
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:version",
+
+    "bucket": {
+      "@id": "https://powersync.com/vocab/bucket",
+      "@type": "@id"
+    },
+    "bucketName": {
+      "@id": "https://powersync.com/vocab/bucketName",
+      "@type": "xsd:string"
+    },
+    "checkpoint": {
+      "@id": "https://powersync.com/vocab/checkpoint",
+      "@type": "@id"
+    },
+    "checkpointToken": {
+      "@id": "https://powersync.com/vocab/checkpointToken",
+      "@type": "xsd:string"
+    },
+    "lastOpId": {
+      "@id": "https://powersync.com/vocab/lastOpId",
+      "@type": "xsd:integer"
+    },
+    "writeChecksum": {
+      "@id": "https://powersync.com/vocab/writeChecksum",
+      "@type": "xsd:integer"
+    },
+
+    "SyncOperation": {
+      "@id": "https://powersync.com/vocab/SyncOperation",
+      "@type": "@id"
+    },
+    "opType": {
+      "@id": "https://powersync.com/vocab/opType",
+      "@type": "xsd:string"
+    },
+    "opId": {
+      "@id": "https://powersync.com/vocab/opId",
+      "@type": "xsd:integer"
+    },
+    "subkey": {
+      "@id": "https://powersync.com/vocab/subkey",
+      "@type": "xsd:string"
+    },
+    "objectType": {
+      "@id": "https://powersync.com/vocab/objectType",
+      "@type": "xsd:string"
+    },
+    "objectId": {
+      "@id": "https://powersync.com/vocab/objectId",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "https://powersync.com/vocab/data"
+    },
+
+    "SyncRule": {
+      "@id": "https://powersync.com/vocab/SyncRule",
+      "@type": "@id"
+    },
+    "tableName": {
+      "@id": "https://powersync.com/vocab/tableName",
+      "@type": "xsd:string"
+    },
+    "columns": {
+      "@id": "https://powersync.com/vocab/columns",
+      "@container": "@list"
+    },
+    "parameters": {
+      "@id": "https://powersync.com/vocab/parameters",
+      "@container": "@list"
+    },
+
+    "JWTToken": {
+      "@id": "https://powersync.com/vocab/JWTToken",
+      "@type": "@id"
+    },
+    "sub": {
+      "@id": "https://powersync.com/vocab/sub",
+      "@type": "xsd:string"
+    },
+    "iat": {
+      "@id": "https://powersync.com/vocab/iat",
+      "@type": "xsd:integer"
+    },
+    "exp": {
+      "@id": "https://powersync.com/vocab/exp",
+      "@type": "xsd:integer"
+    },
+
+    "PowerSyncDatabase": {
+      "@id": "https://powersync.com/vocab/PowerSyncDatabase",
+      "@type": "@id"
+    },
+    "schema": {
+      "@id": "https://powersync.com/vocab/schema",
+      "@type": "@id"
+    },
+    "syncStatus": {
+      "@id": "https://powersync.com/vocab/syncStatus",
+      "@type": "@id"
+    },
+    "connected": {
+      "@id": "https://powersync.com/vocab/connected",
+      "@type": "xsd:boolean"
+    },
+    "hasSynced": {
+      "@id": "https://powersync.com/vocab/hasSynced",
+      "@type": "xsd:boolean"
+    },
+    "downloading": {
+      "@id": "https://powersync.com/vocab/downloading",
+      "@type": "xsd:boolean"
+    },
+    "uploading": {
+      "@id": "https://powersync.com/vocab/uploading",
+      "@type": "xsd:boolean"
+    },
+
+    "Table": {
+      "@id": "https://powersync.com/vocab/Table",
+      "@type": "@id"
+    },
+    "Column": {
+      "@id": "https://powersync.com/vocab/Column",
+      "@type": "@id"
+    },
+    "columnType": {
+      "@id": "https://powersync.com/vocab/columnType",
+      "@type": "xsd:string"
+    },
+
+    "backendDatabase": {
+      "@id": "https://powersync.com/vocab/backendDatabase",
+      "@type": "xsd:string"
+    },
+    "serviceEndpoint": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "jwtSecret": {
+      "@id": "https://powersync.com/vocab/jwtSecret",
+      "@type": "xsd:string"
+    }
+  }
+}

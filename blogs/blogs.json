@@ -1,0 +1,14 @@
+{
+  "repo": "powersync",
+  "feeds": [
+    {
+      "source": "https://powersync.com/blog",
+      "feed_url": "https://powersync.com/blog/rss.xml",
+      "title": "PowerSync Blog",
+      "saved": 0,
+      "method": "rss"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-12T00:00:00Z"
+}
