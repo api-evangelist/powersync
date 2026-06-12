@@ -1,0 +1,82 @@
+---
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: PowerSync
+providerId: powersync
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - Rate Limiting
+description: >-
+  PowerSync Cloud enforces concurrent connection limits per plan tier; a 429
+  status is returned when the peak concurrent connection limit is exceeded.
+  Throughput limits govern database replication from source to PowerSync Service
+  and client sync from PowerSync to clients.
+sources:
+  - https://docs.powersync.com/resources/performance-and-limits
+headers:
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+limits:
+  - name: Peak Concurrent Connections (Free)
+    scope: org
+    metric: concurrent_connections
+    limit: 50
+    timeFrame: session
+
+  - name: Peak Concurrent Connections (Pro)
+    scope: org
+    metric: concurrent_connections
+    limit: 1000
+    timeFrame: session
+
+  - name: Peak Concurrent Connections (Team)
+    scope: org
+    metric: concurrent_connections
+    limit: 10000
+    timeFrame: session
+
+  - name: Database Replication Throughput (small rows)
+    scope: org
+    metric: operations_per_second
+    limit: 4000
+    timeFrame: second
+
+  - name: Database Replication Throughput (large rows)
+    scope: org
+    metric: mb_per_second
+    limit: 5
+    timeFrame: second
+
+  - name: Replication Transactions
+    scope: org
+    metric: transactions_per_second
+    limit: 60
+    timeFrame: second
+
+  - name: Client Sync Throughput (per client)
+    scope: user
+    metric: operations_per_second
+    limit: 20000
+    timeFrame: second
+
+  - name: Synced Buckets Per User
+    scope: user
+    metric: buckets
+    limit: 1000
+    timeFrame: session
+
+  - name: Row / Document Size
+    scope: org
+    metric: mb_per_row
+    limit: 15
+    timeFrame: usage
+
+  - name: Columns Per Table
+    scope: org
+    metric: columns
+    limit: 1999
+    timeFrame: usage

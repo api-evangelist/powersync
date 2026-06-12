@@ -1,0 +1,62 @@
+---
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: PowerSync
+providerId: powersync
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+description: FOCUS-aligned FinOps for PowerSync Cloud sync service consumption.
+sources:
+  - https://powersync.com/pricing
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: PowerSync
+serviceCategory: Database
+billingModel:
+  pricingCategory: Hybrid (subscription base + metered overages)
+  billingFrequency: Monthly
+  billingCurrency: USD
+focusColumns:
+  ServiceName: PowerSync Cloud
+  ServiceCategory: Database
+  ProviderName: PowerSync
+  PublisherName: PowerSync
+  BillingCurrency: USD
+meters:
+  - name: Data Synced
+    unit: GB
+    aggregation: sum
+  - name: Data Hosted
+    unit: GB
+    aggregation: max
+  - name: Peak Concurrent Connections
+    unit: connections
+    aggregation: max
+  - name: Service Instances
+    unit: instances
+    aggregation: max
+principles:
+  - name: Visibility
+    description: >-
+      Track PowerSync Cloud consumption monthly across data synced (GB), data
+      hosted (GB), and peak concurrent connections per instance to surface
+      cost drivers.
+  - name: Optimization
+    description: >-
+      Right-size plan tier based on monthly sync volume and peak connection
+      patterns; monitor for unused instances and deactivate idle projects on
+      Free tier to avoid forced deactivation.
+  - name: Accountability
+    description: >-
+      Tag service instances by application or team to attribute sync costs;
+      use plan overage alerts (webhook alerts available on Pro+) to prevent
+      unexpected charges.

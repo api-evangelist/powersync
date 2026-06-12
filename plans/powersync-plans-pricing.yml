@@ -1,0 +1,207 @@
+---
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: PowerSync
+providerId: powersync
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - Developer Tools
+  - Database
+  - Sync
+  - Offline-First
+description: >-
+  PowerSync Cloud offers four tiers — Free, Pro, Team, and Enterprise — priced
+  by data synced per month, data hosted, and peak concurrent connections.
+sources:
+  - https://powersync.com/pricing
+plans:
+  - id: powersync-free
+    name: Free
+    type: free
+    description: >-
+      Up to 2 GB data synced/month, 500 MB hosted, 50 peak concurrent
+      connections, 2 service instances, community support; projects deactivate
+      after 1 week of inactivity.
+    entries:
+      - label: Data Synced
+        name: data_synced_gb
+        type: quota
+        metric: GB
+        limit: 2
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Data Hosted
+        name: data_hosted_mb
+        type: quota
+        metric: MB
+        limit: 500
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Peak Concurrent Connections
+        name: concurrent_connections
+        type: quota
+        metric: connections
+        limit: 50
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Service Instances
+        name: instances
+        type: quota
+        metric: instances
+        limit: 2
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+
+  - id: powersync-pro
+    name: Pro
+    type: freemium
+    description: >-
+      30 GB data synced/month included (then $1/GB), 10 GB hosted (then $1/GB),
+      1,000 peak concurrent connections (then $30/1,000), up to 2 instances
+      (then $25/month each), email support with webhook alerts, no project
+      deactivation.
+    entries:
+      - label: Monthly Base Price
+        name: base_price
+        type: metered
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '49.00'
+        userMultiplied: false
+      - label: Data Synced Included
+        name: data_synced_included_gb
+        type: quota
+        metric: GB
+        limit: 30
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Data Synced Overage
+        name: data_synced_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '1.00'
+        userMultiplied: false
+      - label: Data Hosted Included
+        name: data_hosted_included_gb
+        type: quota
+        metric: GB
+        limit: 10
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Data Hosted Overage
+        name: data_hosted_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '1.00'
+        userMultiplied: false
+      - label: Peak Concurrent Connections Included
+        name: concurrent_connections_included
+        type: quota
+        metric: connections
+        limit: 1000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Concurrent Connections Overage
+        name: concurrent_connections_overage
+        type: metered
+        metric: per 1000 connections
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1000
+        price: '30.00'
+        userMultiplied: false
+
+  - id: powersync-team
+    name: Team
+    type: paid
+    description: >-
+      From $599/month; 1 GB data hosted included (then $1/GB, max 500 GB
+      default), up to 10,000 peak concurrent connections (configurable to
+      50,000+), priority email support with SLA, SOC 2 and HIPAA compliance
+      available, customizable roles and permissions.
+    entries:
+      - label: Monthly Base Price
+        name: base_price
+        type: metered
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '599.00'
+        userMultiplied: false
+      - label: Peak Concurrent Connections
+        name: concurrent_connections
+        type: quota
+        metric: connections
+        limit: 10000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Data Hosted Included
+        name: data_hosted_included_gb
+        type: quota
+        metric: GB
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+
+  - id: powersync-enterprise
+    name: Enterprise
+    type: enterprise
+    description: >-
+      Fully customized pricing and terms with 24x7x365 premium enterprise
+      support, assigned customer success engineer, scaling advisory, and
+      security questionnaire assistance.
+    entries:
+      - label: Custom Pricing
+        name: custom_pricing
+        type: boolean
+        metric: custom
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'custom'
+        userMultiplied: false

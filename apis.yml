@@ -1,0 +1,164 @@
+---
+aid: powersync
+name: PowerSync
+description: >-
+  PowerSync is a sync engine that automatically synchronizes backend databases
+  (Postgres, MongoDB, MySQL, SQL Server) with client-side SQLite, enabling
+  offline-first and local-first applications. It consists of two components: the
+  PowerSync Service (available as a managed cloud service or self-hosted via
+  Docker) and a set of open-source client SDKs. Client SDKs are available for
+  JavaScript/Web, React Native, Flutter/Dart, Kotlin, Swift, Node.js, .NET, and
+  Rust. Authentication is handled via JWT tokens, with support for major
+  providers including Auth0, Firebase, Supabase, Amazon Cognito, and Azure AD.
+  PowerSync streams database changes in real-time so clients can query and
+  mutate local SQLite without waiting on the network.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Developer Tools
+  - Database
+  - Sync
+  - Offline-First
+  - SQLite
+  - Local-First
+  - Real-Time
+url: https://raw.githubusercontent.com/api-evangelist/powersync/refs/heads/main/apis.yml
+created: '2026-06-12'
+modified: '2026-06-12'
+specificationVersion: '0.19'
+apis:
+  - aid: powersync:sync-service
+    name: PowerSync Sync Service API
+    description: >-
+      The PowerSync Service exposes a streaming sync protocol over HTTP/WebSocket
+      that client SDKs connect to using JWT authentication. Clients submit their
+      current bucket state and the service streams real-time checkpoint and
+      operation data back, enabling incremental SQLite sync for offline-first
+      apps.
+    humanURL: https://docs.powersync.com/architecture/powersync-service
+    tags:
+      - Sync
+      - Streaming
+      - SQLite
+      - Real-Time
+    properties:
+      - type: Documentation
+        url: https://docs.powersync.com/architecture/powersync-service
+      - type: Documentation
+        url: https://docs.powersync.com/architecture/powersync-protocol
+
+  - aid: powersync:javascript-sdk
+    name: PowerSync JavaScript / Web SDK
+    description: >-
+      Client SDK for JavaScript and browser environments using Wasm-backed
+      SQLite. Provides a PowerSyncDatabase class for local SQLite management
+      with reactive queries, offline write queuing, and automatic sync with the
+      PowerSync Service.
+    humanURL: https://docs.powersync.com/client-sdk-references/js-web
+    tags:
+      - JavaScript
+      - Web
+      - SQLite
+      - SDK
+    properties:
+      - type: Documentation
+        url: https://docs.powersync.com/client-sdk-references/js-web
+      - type: Documentation
+        url: https://powersync-ja.github.io/powersync-js/web-sdk
+
+  - aid: powersync:react-native-sdk
+    name: PowerSync React Native SDK
+    description: >-
+      Client SDK for React Native and Expo applications, enabling offline-first
+      mobile apps backed by embedded SQLite synced to Postgres, MongoDB, MySQL,
+      or SQL Server.
+    humanURL: https://docs.powersync.com/client-sdk-references/react-native
+    tags:
+      - React Native
+      - Mobile
+      - SQLite
+      - SDK
+    properties:
+      - type: Documentation
+        url: https://docs.powersync.com/client-sdk-references/react-native
+      - type: Documentation
+        url: https://powersync-ja.github.io/powersync-js/react-native-sdk
+
+  - aid: powersync:flutter-sdk
+    name: PowerSync Flutter / Dart SDK
+    description: >-
+      Client SDK for Flutter and Dart applications providing embedded SQLite
+      sync with Rust-backed native connection pools and built-in encryption
+      support.
+    humanURL: https://docs.powersync.com/client-sdk-references/flutter
+    tags:
+      - Flutter
+      - Dart
+      - Mobile
+      - SDK
+    properties:
+      - type: Documentation
+        url: https://docs.powersync.com/client-sdk-references/flutter
+      - type: Documentation
+        url: https://pub.dev/packages/powersync
+
+  - aid: powersync:kotlin-sdk
+    name: PowerSync Kotlin SDK
+    description: >-
+      Client SDK for Kotlin Multiplatform applications, enabling offline-first
+      Android and cross-platform apps with embedded SQLite synced to backend
+      databases.
+    humanURL: https://docs.powersync.com/client-sdk-references/kotlin-multiplatform
+    tags:
+      - Kotlin
+      - Android
+      - Mobile
+      - SDK
+    properties:
+      - type: Documentation
+        url: https://docs.powersync.com/client-sdk-references/kotlin-multiplatform
+
+  - aid: powersync:swift-sdk
+    name: PowerSync Swift SDK
+    description: >-
+      Client SDK for Swift applications enabling offline-first iOS and macOS
+      apps with embedded SQLite synced to backend databases via the PowerSync
+      Service.
+    humanURL: https://docs.powersync.com/client-sdk-references/swift
+    tags:
+      - Swift
+      - iOS
+      - macOS
+      - SDK
+    properties:
+      - type: Documentation
+        url: https://docs.powersync.com/client-sdk-references/swift
+
+common:
+  - type: Website
+    url: https://powersync.com/
+  - type: Documentation
+    url: https://docs.powersync.com/
+  - type: GitHubOrganization
+    url: https://github.com/powersync-ja
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/journeyapps-powersync/
+  - type: Blog
+    url: https://powersync.com/blog
+  - type: Pricing
+    url: https://powersync.com/pricing
+  - type: StatusPage
+    url: https://status.powersync.com/
+  - type: X
+    url: https://twitter.com/powersync_
+  - type: Changelog
+    url: https://releases.powersync.com/
+  - type: Plans
+    url: plans/powersync-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/powersync-rate-limits.yml
+  - type: FinOps
+    url: finops/powersync-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
