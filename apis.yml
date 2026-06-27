@@ -151,7 +151,7 @@ common:
     url: https://status.powersync.com/
   - type: X
     url: https://twitter.com/powersync_
-  - type: Changelog
+  - type: ChangeLog
     url: https://releases.powersync.com/
   - type: Plans
     url: plans/powersync-plans-pricing.yml
