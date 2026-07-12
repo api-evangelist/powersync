@@ -135,6 +135,8 @@ apis:
         url: https://docs.powersync.com/client-sdk-references/swift
 
 common:
+  - type: DomainSecurity
+    url: security/powersync-domain-security.yml
   - type: Website
     url: https://powersync.com/
   - type: Documentation
