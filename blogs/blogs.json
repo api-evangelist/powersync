@@ -5,7 +5,7 @@
       "source": "https://powersync.com/blog/rss.xml",
       "feed_url": "https://powersync.com/blog/rss.xml",
       "title": "",
-      "saved": 2,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -13,6 +13,6 @@
       "error": "HTTPError"
     }
   ],
-  "post_count": 54,
-  "fetched": "2026-08-15T12:11:08Z"
+  "post_count": 55,
+  "fetched": "2026-08-22T20:20:02Z"
 }
