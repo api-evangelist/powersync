@@ -210,3 +210,56 @@ plans:
         unit: 1
         price: 'custom'
         userMultiplied: false
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - metered
+  - negotiated
+  units:
+  - data
+  - negotiated
+  - object
+  - period
+  plans:
+  - name: Free
+    access: free
+    model: free
+    model_how: derived
+    units:
+    - data
+    - object
+    - other
+    periods:
+    - month
+  - name: Pro
+    access: freemium
+    model: metered
+    model_how: derived
+    units:
+    - data
+    - object
+    - other
+    - period
+    periods:
+    - month
+    - per-use
+  - name: Team
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - data
+    - object
+    - period
+    periods:
+    - month
+  - name: Enterprise
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - month
